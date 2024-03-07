@@ -1,0 +1,6 @@
+numpy
+pillow
+torch
+io
+tempfile
+Wand==0.6.13

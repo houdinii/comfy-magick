@@ -53,7 +53,7 @@
 
 This is a way to implement ImageMagick functionality in ComfyUI, which is generally PIL (pillow) based. I'm not sure the
 best way to handle this, as batch images make it a lot more complex, but the general idea will be two nodes to translate
-the IMAGE type, a torch.tensor of shape [batch, width, height, channels], or [1, 600,  800, 3] for a single 800x600 image,
+the IMAGE type, a torch.tensor of shape [batch, height, width, channels], or [1, 600,  800, 3] for a single 800x600 image,
 into/from a wand Image object. 
 
 The nodes in between will not be compatible with other nodes until it is translated back into tensor form. 

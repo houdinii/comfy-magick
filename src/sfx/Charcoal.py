@@ -1,34 +1,38 @@
 import torch
-from .utilities import wand_to_pil, getEmptyResults
+from ..utilities import wand_to_pil, getEmptyResults
 from PIL import Image as PILImage
 from wand.image import Image as WandImage
 import io
 import numpy as np
 
 
-class BlueShift:
+class Charcoal:
     @classmethod
     def INPUT_TYPES(s):
         return {
             "required": {
                 "IMAGE": ("IMAGE",),
-                "Factor": (
+                "Radius": (
                     "FLOAT",
-                    {"min": 0.0, "max": 100.0, "default": 1.25, "step": 0.05},
+                    {"min": 0.0, "max": 100.0, "default": 1.5, "step": 0.1},
+                ),
+                "Sigma": (
+                    "FLOAT",
+                    {"min": 0.0, "max": 1.0, "default": 0.5, "step": 0.01},
                 ),
             }
         }
 
     INPUT_IS_LIST = False
     RETURN_TYPES = ("IMAGE",)
-    FUNCTION = "processBlueShift"
+    FUNCTION = "processCharcoal"
     OUTPUT_NODE = True
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"
-    TITLE = "Blue Shift Effect"
+    TITLE = "Charcoal Effect"
 
-    def processBlueShift(self, IMAGE, Factor):
+    def processCharcoal(self, IMAGE, Radius, Sigma):
         batch, height, width, channels = IMAGE.shape
         result = getEmptyResults(
             batch=batch, height=height, width=width, color_channels=channels
@@ -43,9 +47,8 @@ class BlueShift:
             blob.seek(0)
 
             with WandImage(blob=blob.getvalue()) as wand_img:
-                wand_img.blue_shift(factor=Factor)
-
-                result_b = wand_to_pil(wand_img)
+                wand_img.charcoal(radius=Radius, sigma=Sigma)
+                result_b = wand_to_pil(wand_img).convert(mode="RGB")
             result_b = torch.tensor(np.array(result_b)) / 255.0
 
             try:

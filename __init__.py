@@ -1,7 +1,7 @@
-from .CropByAspectRatio import CropByAspectRatio
-from .BlueShift import BlueShift
-from .Charcoal import Charcoal
-from .AddNoise import AddNoise
+from .src.transform.CropByAspectRatio import CropByAspectRatio
+from .src.sfx.BlueShift import BlueShift
+from .src.sfx.Charcoal import Charcoal
+from .src.sfx.AddNoise import AddNoise
 
 NODE_CLASS_MAPPINGS = {
     "CropByAspectRatio": CropByAspectRatio,

@@ -1,6 +1,6 @@
 import torch
 import wand.image
-from .utilities import calculate_aspect_ratio, wand_to_pil, getEmptyResults
+from ..utilities import calculate_aspect_ratio, wand_to_pil, getEmptyResults
 from PIL import Image as PILImage
 from wand.image import Image as WandImage
 import io

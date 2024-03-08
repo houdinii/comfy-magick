@@ -1,5 +1,5 @@
 import torch
-from .utilities import wand_to_pil, getEmptyResults
+from ..utilities import wand_to_pil, getEmptyResults
 from PIL import Image as PILImage
 from wand.image import Image as WandImage
 import io

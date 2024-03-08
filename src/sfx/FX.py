@@ -12,8 +12,27 @@ class FX:
     def INPUT_TYPES(s):
         return {
             "required": {
-                "IMAGE": ("IMAGE", ),
+                "IMAGE": ("IMAGE",),
                 "FX_Filter": ("STRING", {"default": '(hue > 0.9 || hue < 0.1) ? u : lightness'}),
+                "Color_Channel": (
+                    [
+                        "red",
+                        "gray",
+                        "cyan",
+                        "green",
+                        "magenta",
+                        "blue",
+                        "yellow",
+                        "alpha",
+                        "opacity",
+                        "black",
+                        "index",
+                        "composite_channels",
+                        "all_channels",
+                        "sync_channels",
+                        "default_channels",
+                    ], {"default": "all_channels"}
+                ),
             },
             "optional": {
                 "NOTES": ("STRING", {"default": "httpd://www.imagemagick.org/script/fx.php"})
@@ -29,7 +48,7 @@ class FX:
     CATEGORY = "ComfyMagick/SFX"
     TITLE = "FX Effect"
 
-    def processFX(self, IMAGE, FX_Filter, NOTES):
+    def processFX(self, IMAGE, FX_Filter, Color_Channel, NOTES):
         batch, height, width, channels = IMAGE.shape
         result = getEmptyResults(
             batch=batch, height=height, width=width, color_channels=channels
@@ -44,7 +63,7 @@ class FX:
             blob.seek(0)
 
             with WandImage(blob=blob.getvalue()) as wand_img:
-                with wand_img.fx(FX_Filter) as filtered_img:
+                with wand_img.fx(FX_Filter, channel=Color_Channel) as filtered_img:
                     result_b = wand_to_pil(filtered_img)
             result_b = torch.tensor(np.array(result_b)) / 255.0
 

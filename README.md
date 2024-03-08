@@ -84,6 +84,7 @@ OSes, however there are instructions in the wand documentation found at: https:/
   * BlueShift
   * Charcoal
   * Colorize
+  * FX
 * Transforms
   * CropByAspectRatio
 

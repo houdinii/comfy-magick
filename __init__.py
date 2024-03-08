@@ -11,10 +11,10 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "CropByAspectRatio": "Crop By Aspect Ratio",
-    "BlueShift": "Blue Shift Effect",
-    "Charcoal": "Charcoal Effect",
-    "AddNoise": "Add Noise Effect",
+    "CropByAspectRatio": CropByAspectRatio.TITLE,
+    "BlueShift": BlueShift.TITLE,
+    "Charcoal": Charcoal.TITLE,
+    "AddNoise": AddNoise.TITLE,
 }
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

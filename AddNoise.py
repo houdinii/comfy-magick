@@ -56,6 +56,7 @@ class AddNoise:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"
+    TITLE = "Add Noise Effect"
 
     def processAddNoise(self, IMAGE, Noise_Type, Color_Channel, Attenuate):
         batch, height, width, channels = IMAGE.shape

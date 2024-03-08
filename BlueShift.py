@@ -26,6 +26,7 @@ class BlueShift:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"
+    TITLE = "Blue Shift Effect"
 
     def processBlueShift(self, IMAGE, Factor):
         batch, height, width, channels = IMAGE.shape

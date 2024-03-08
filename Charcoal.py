@@ -30,6 +30,7 @@ class Charcoal:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"
+    TITLE = "Charcoal Effect"
 
     def processCharcoal(self, IMAGE, Radius, Sigma):
         batch, height, width, channels = IMAGE.shape

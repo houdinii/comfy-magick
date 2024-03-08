@@ -56,7 +56,7 @@ best way to handle this, as batch images make it a lot more complex, but the gen
 the IMAGE type, a torch.tensor of shape [batch, height, width, channels], or [1, 600,  800, 3] for a single 800x600 image,
 into/from a wand Image object. 
 
-The nodes in between will not be compatible with other nodes until it is translated back into tensor form. 
+THIS IS CHANGING. THIS WON'T WORK SO EACH NODE WORKS NATIVELY WITH IMAGE INPUT/OUTPUT.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

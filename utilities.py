@@ -1,4 +1,5 @@
 import numpy as np
+import torch
 from wand.image import Image as WandImage
 from PIL import Image as PILImage
 import io
@@ -25,3 +26,7 @@ def calculate_aspect_ratio(aspect_ratio, width, height):
         new_height = int(width * (ratio_height / ratio_width))
 
     return new_width, new_height
+
+
+def getEmptyResults(batch, height, width, color_channels=3, dtype=torch.float32):
+    return torch.zeros(batch, height, width, color_channels, dtype=dtype)

@@ -1,17 +1,20 @@
 from .CropByAspectRatio import CropByAspectRatio
-from .ComfyImageToWand import ComfyImageToWand
-from .WandToComfyImage import WandToComfyImage
+from .BlueShift import BlueShift
+from .Charcoal import Charcoal
+from .AddNoise import AddNoise
 
 NODE_CLASS_MAPPINGS = {
     "CropByAspectRatio": CropByAspectRatio,
-    "ComfyImageToWand": ComfyImageToWand,
-    "WandToComfyImage": WandToComfyImage,
+    "BlueShift": BlueShift,
+    "Charcoal": Charcoal,
+    "AddNoise": AddNoise,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "CropByAspectRatio": "Crop By Aspect Ratio",
-    "ComfyImageToWand": "Comfy Image To Wand Image",
-    "WandToComfyImage": "Wand Image To Comfy Image",
+    "BlueShift": "Blue Shift Effect",
+    "Charcoal": "Charcoal Effect",
+    "AddNoise": "Add Noise Effect",
 }
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

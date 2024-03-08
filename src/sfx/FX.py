@@ -6,6 +6,7 @@ import io
 import numpy as np
 
 
+# http://www.imagemagick.org/script/fx.php
 class FX:
     @classmethod
     def INPUT_TYPES(s):
@@ -13,6 +14,9 @@ class FX:
             "required": {
                 "IMAGE": ("IMAGE", ),
                 "FX_Filter": ("STRING", {"default": '(hue > 0.9 || hue < 0.1) ? u : lightness'}),
+            },
+            "optional": {
+                "NOTES": ("STRING", {"default": "httpd://www.imagemagick.org/script/fx.php"})
             }
         }
 
@@ -25,7 +29,7 @@ class FX:
     CATEGORY = "ComfyMagick/SFX"
     TITLE = "FX Effect"
 
-    def processFX(self, IMAGE, FX_Filter):
+    def processFX(self, IMAGE, FX_Filter, NOTES):
         batch, height, width, channels = IMAGE.shape
         result = getEmptyResults(
             batch=batch, height=height, width=width, color_channels=channels

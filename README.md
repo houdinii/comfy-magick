@@ -77,6 +77,16 @@ Right now, this is using wand version 0.6.13 which uses ImageMagick bindings for
 This does require ImageMagick to be on the PATH (for Windows). I'm not entirely sure how this would be set up on other
 OSes, however there are instructions in the wand documentation found at: https://docs.wand-py.org/en/0.6.12/guide/install.html
 
+### Node List
+
+* Special Effects:
+  * AddNoise
+  * BlueShift
+  * Charcoal
+  * Colorize
+* Transforms
+  * CropByAspectRatio
+
 <!--
 ### Installation
 

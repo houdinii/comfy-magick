@@ -29,6 +29,7 @@ from .src.image_effects.Kuwahara import Kuwahara
 from .src.image_effects.Shade import Shade
 from .src.image_effects.Sharpen import Sharpen
 from .src.image_effects.AdaptiveSharpen import AdaptiveSharpen
+from .src.image_effects.UnsharpMask import UnsharpMask
 
 NODE_CLASS_MAPPINGS = {
     "CropByAspectRatio": CropByAspectRatio,
@@ -59,6 +60,7 @@ NODE_CLASS_MAPPINGS = {
     "Shade": Shade,
     "Sharpen": Sharpen,
     "AdaptiveSharpen": AdaptiveSharpen,
+    "UnsharpMask": UnsharpMask,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -90,6 +92,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "Shade": Shade.TITLE,
     "Sharpen": Sharpen.TITLE,
     "AdaptiveSharpen": AdaptiveSharpen.TITLE,
+    "UnsharpMask": UnsharpMask.TITLE,
 }
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

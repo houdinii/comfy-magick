@@ -1,5 +1,9 @@
 import torch
-from ..utilities import wand_to_pil, getEmptyResults, PIXEL_INTERPOLATE_METHODS_LIST, pure_pil_alpha_to_color_v2
+from ..utilities import (
+    wand_to_pil,
+    getEmptyResults,
+    pure_pil_alpha_to_color_v2,
+)
 from PIL import Image as PILImage
 from wand.image import Image as WandImage
 import io
@@ -8,6 +12,7 @@ import numpy as np
 
 # TODO: FIND A WAY TO DYNAMICALLY CHANGE MIN AND MAX DEPENDING ON IMAGE INPUT DIMENSIONS!!
 # TODO: IT'S ONLY COMING OUT WHITE!! WTF?!?
+
 
 class Vignette:
     @classmethod
@@ -72,7 +77,9 @@ class Vignette:
             with WandImage(blob=blob.getvalue()) as wand_img:
                 wand_img.vignette(radius=Radius, sigma=Sigma, x=X, y=Y)
                 # We need to add a pure (X,X,X) BG Here and combine it all!!
-                result_b = pure_pil_alpha_to_color_v2(wand_to_pil(wand_img), color=(Red, Green, Blue))
+                result_b = pure_pil_alpha_to_color_v2(
+                    wand_to_pil(wand_img), color=(Red, Green, Blue)
+                )
             result_b = torch.tensor(np.array(result_b)) / 255.0
 
             try:

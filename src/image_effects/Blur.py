@@ -3,7 +3,6 @@ from ..utilities import (
     wand_to_pil,
     getEmptyResults,
     COLOR_CHANNELS_LIST,
-    NOISE_TYPE_LIST,
 )
 from PIL import Image as PILImage
 from wand.image import Image as WandImage
@@ -53,9 +52,7 @@ class Blur:
             blob.seek(0)
 
             with WandImage(blob=blob.getvalue()) as wand_img:
-                wand_img.blur(
-                    radius=Radius, sigma=Sigma, channel=Color_Channel
-                )
+                wand_img.blur(radius=Radius, sigma=Sigma, channel=Color_Channel)
                 result_b = wand_to_pil(wand_img)
             result_b = torch.tensor(np.array(result_b)) / 255.0
 

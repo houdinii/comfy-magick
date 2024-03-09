@@ -3,7 +3,6 @@ from ..utilities import (
     wand_to_pil,
     getEmptyResults,
     COLOR_CHANNELS_LIST,
-    NOISE_TYPE_LIST,
 )
 from PIL import Image as PILImage
 from wand.image import Image as WandImage

@@ -45,7 +45,7 @@ def pure_pil_alpha_to_color_v2(image, color=(255, 255, 255)):
 
     """
     image.load()  # needed for split()
-    background = PILImage.new('RGB', image.size, color)
+    background = PILImage.new("RGB", image.size, color)
     background.paste(image, mask=image.split()[3])  # 3 is the alpha channel
     return background
 

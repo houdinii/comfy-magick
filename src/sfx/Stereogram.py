@@ -1,5 +1,5 @@
 import torch
-from ..utilities import wand_to_pil, getEmptyResults, PIXEL_INTERPOLATE_METHODS_LIST
+from ..utilities import wand_to_pil, getEmptyResults
 from PIL import Image as PILImage
 from wand.image import Image as WandImage
 import io
@@ -31,9 +31,14 @@ class Stereogram:
         batch, height, width, channels = LEFT_EYE_IMAGE.shape
         r_batch, r_height, r_width, r_channels = RIGHT_EYE_IMAGE.shape
 
-        if batch != r_batch or height != r_height or width != r_width or channels != r_channels:
+        if (
+            batch != r_batch
+            or height != r_height
+            or width != r_width
+            or channels != r_channels
+        ):
             print("darn")
-            return (LEFT_EYE_IMAGE, )
+            return (LEFT_EYE_IMAGE,)
 
         result = getEmptyResults(
             batch=batch, height=height, width=width, color_channels=channels
@@ -55,7 +60,9 @@ class Stereogram:
 
             with WandImage(blob=l_blob.getvalue()) as l_wand_img:
                 with WandImage(blob=r_blob.getvalue()) as r_wand_img:
-                    with WandImage.stereogram(left=l_wand_img, right=r_wand_img) as stereo_img:
+                    with WandImage.stereogram(
+                        left=l_wand_img, right=r_wand_img
+                    ) as stereo_img:
                         print("got here")
                         result_b = wand_to_pil(stereo_img)
             result_b = torch.tensor(np.array(result_b)) / 255.0

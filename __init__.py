@@ -20,6 +20,8 @@ from .src.image_effects.AdaptiveBlur import AdaptiveBlur
 from .src.image_effects.GaussianBlur import GaussianBlur
 from .src.image_effects.MotionBlur import MotionBlur
 from .src.image_effects.RotationalBlur import RotationalBlur
+from .src.image_effects.SelectiveBlur import SelectiveBlur
+from .src.image_effects.Despeckle import Despeckle
 
 NODE_CLASS_MAPPINGS = {
     "CropByAspectRatio": CropByAspectRatio,
@@ -42,6 +44,8 @@ NODE_CLASS_MAPPINGS = {
     "GaussianBlur": GaussianBlur,
     "MotionBlur": MotionBlur,
     "RotationalBlur": RotationalBlur,
+    "SelectiveBlur": SelectiveBlur,
+    "Despeckle": Despeckle,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -65,6 +69,8 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "GaussianBlur": GaussianBlur.TITLE,
     "MotionBlur": MotionBlur.TITLE,
     "RotationalBlur": RotationalBlur.TITLE,
+    "SelectiveBlur": SelectiveBlur.TITLE,
+    "Despeckle": Despeckle.TITLE,
 }
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

@@ -31,6 +31,7 @@ def calculate_aspect_ratio(aspect_ratio, width, height):
 def getEmptyResults(batch, height, width, color_channels=3, dtype=torch.float32):
     return torch.zeros(batch, height, width, color_channels, dtype=dtype)
 
+
 # These lists need to be trimmed and rearranged
 COLOR_CHANNELS_LIST = [
     "red",
@@ -51,18 +52,18 @@ COLOR_CHANNELS_LIST = [
 ]
 
 PIXEL_INTERPOLATE_METHODS_LIST = [
-    'undefined',
-    'average',
-    'average9',
-    'average16',
-    'background',
-    'bilinear',
-    'blend',
-    'catrom',
-    'integer',
-    'mesh',
-    'nearest',
-    'spline',
+    "undefined",
+    "average",
+    "average9",
+    "average16",
+    "background",
+    "bilinear",
+    "blend",
+    "catrom",
+    "integer",
+    "mesh",
+    "nearest",
+    "spline",
 ]
 
 NOISE_TYPE_LIST = [

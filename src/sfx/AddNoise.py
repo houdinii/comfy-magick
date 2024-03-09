@@ -1,5 +1,10 @@
 import torch
-from ..utilities import wand_to_pil, getEmptyResults, COLOR_CHANNELS_LIST, NOISE_TYPE_LIST
+from ..utilities import (
+    wand_to_pil,
+    getEmptyResults,
+    COLOR_CHANNELS_LIST,
+    NOISE_TYPE_LIST,
+)
 from PIL import Image as PILImage
 from wand.image import Image as WandImage
 import io
@@ -12,8 +17,8 @@ class AddNoise:
         return {
             "required": {
                 "IMAGE": ("IMAGE",),
-                "Noise_Type": (NOISE_TYPE_LIST, ),
-                "Color_Channel": (COLOR_CHANNELS_LIST, ),
+                "Noise_Type": (NOISE_TYPE_LIST,),
+                "Color_Channel": (COLOR_CHANNELS_LIST, {"default": "all_channels"}),
                 "Attenuate": (
                     "FLOAT",
                     {"min": 0.0, "max": 100.0, "default": 1.0, "step": 0.1},

@@ -11,11 +11,12 @@ class Implode:
     def INPUT_TYPES(s):
         return {
             "required": {
-                "IMAGE": ("IMAGE", ),
-                "Amount": ("FLOAT", {"min": 0.0, "max": 1.0, "step": 0.05, 'default': 0.0}),
-                "Pixel_Interpolate_Method": (
-                    PIXEL_INTERPOLATE_METHODS_LIST,
+                "IMAGE": ("IMAGE",),
+                "Amount": (
+                    "FLOAT",
+                    {"min": 0.0, "max": 1.0, "step": 0.05, "default": 0.0},
                 ),
+                "Pixel_Interpolate_Method": (PIXEL_INTERPOLATE_METHODS_LIST,),
             }
         }
 

@@ -11,9 +11,9 @@ class Colorize:
     def INPUT_TYPES(s):
         return {
             "required": {
-                "IMAGE": ("IMAGE", ),
-                "Color": ("STRING", {"default": 'yellow'}),
-                "Alpha": ("STRING", {"default": 'rgb(10, 0%, 20%)'}),
+                "IMAGE": ("IMAGE",),
+                "Color": ("STRING", {"default": "yellow"}),
+                "Alpha": ("STRING", {"default": "rgb(10, 0%, 20%)"}),
             }
         }
 

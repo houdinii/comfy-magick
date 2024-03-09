@@ -14,7 +14,7 @@ class Charcoal:
                 "IMAGE": ("IMAGE",),
                 "Radius": (
                     "FLOAT",
-                    {"min": 0.0, "max": 100.0, "default": 1.5, "step": 0.1},
+                    {"min": 0.0, "max": 100.0, "default": 1.0, "step": 0.1},
                 ),
                 "Sigma": (
                     "FLOAT",

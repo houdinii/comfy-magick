@@ -14,7 +14,7 @@ class BlueShift:
                 "IMAGE": ("IMAGE",),
                 "Factor": (
                     "FLOAT",
-                    {"min": 0.0, "max": 100.0, "default": 1.25, "step": 0.05},
+                    {"min": 0.0, "max": 100.0, "default": 1.5, "step": 0.05},
                 ),
             }
         }

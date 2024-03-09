@@ -1,6 +1,12 @@
 import torch
 import wand.image
-from ..utilities import calculate_aspect_ratio, wand_to_pil, getEmptyResults, GRAVITY_LIST, ASPECT_RATIO_LIST
+from ..utilities import (
+    calculate_aspect_ratio,
+    wand_to_pil,
+    getEmptyResults,
+    GRAVITY_LIST,
+    ASPECT_RATIO_LIST,
+)
 from PIL import Image as PILImage
 from wand.image import Image as WandImage
 import io
@@ -13,8 +19,8 @@ class CropByAspectRatio:
         return {
             "required": {
                 "IMAGE": ("IMAGE",),
-                "aspect_ratio": (ASPECT_RATIO_LIST, ),
-                "gravity": (GRAVITY_LIST, ),
+                "aspect_ratio": (ASPECT_RATIO_LIST,),
+                "gravity": (GRAVITY_LIST,),
             }
         }
 

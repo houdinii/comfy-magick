@@ -13,12 +13,18 @@ class FX:
         return {
             "required": {
                 "IMAGE": ("IMAGE",),
-                "FX_Filter": ("STRING", {"default": '(hue > 0.9 || hue < 0.1) ? u : lightness'}),
+                "FX_Filter": (
+                    "STRING",
+                    {"default": "(hue > 0.9 || hue < 0.1) ? u : lightness"},
+                ),
                 "Color_Channel": (COLOR_CHANNELS_LIST, {"default": "all_channels"}),
             },
             "optional": {
-                "NOTES": ("STRING", {"default": "httpd://www.imagemagick.org/script/fx.php"})
-            }
+                "NOTES": (
+                    "STRING",
+                    {"default": "httpd://www.imagemagick.org/script/fx.php"},
+                )
+            },
         }
 
     INPUT_IS_LIST = False

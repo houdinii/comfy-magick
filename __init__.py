@@ -21,10 +21,12 @@ from .src.image_effects.GaussianBlur import GaussianBlur
 from .src.image_effects.MotionBlur import MotionBlur
 from .src.image_effects.RotationalBlur import RotationalBlur
 from .src.image_effects.SelectiveBlur import SelectiveBlur
+
 from .src.image_effects.Despeckle import Despeckle
 from .src.image_effects.Edge import Edge
 from .src.image_effects.Emboss import Emboss
 from .src.image_effects.Kuwahara import Kuwahara
+from .src.image_effects.Shade import Shade
 
 NODE_CLASS_MAPPINGS = {
     "CropByAspectRatio": CropByAspectRatio,
@@ -52,6 +54,7 @@ NODE_CLASS_MAPPINGS = {
     "Edge": Edge,
     "Emboss": Emboss,
     "Kuwahara": Kuwahara,
+    "Shade": Shade,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -80,6 +83,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "Edge": Edge.TITLE,
     "Emboss": Emboss.TITLE,
     "Kuwahara": Kuwahara.TITLE,
+    "Shade": Shade.TITLE,
 }
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

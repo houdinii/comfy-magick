@@ -13,6 +13,7 @@ from .src.sfx.Solarize import Solarize
 from .src.sfx.Swirl import Swirl
 from .src.sfx.Tint import Tint
 from .src.sfx.Vignette import Vignette
+from .src.sfx.WaveletDenoise import WaveletDenoise
 
 NODE_CLASS_MAPPINGS = {
     "CropByAspectRatio": CropByAspectRatio,
@@ -29,6 +30,7 @@ NODE_CLASS_MAPPINGS = {
     "Swirl": Swirl,
     "Tint": Tint,
     "Vignette": Vignette,
+    "WaveletDenoise": WaveletDenoise,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -46,6 +48,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "Swirl": Swirl.TITLE,
     "Tint": Tint.TITLE,
     "Vignette": Vignette.TITLE,
+    "WaveletDenoise": WaveletDenoise.TITLE,
 }
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

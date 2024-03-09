@@ -7,6 +7,7 @@ from .src.sfx.Colorize import Colorize
 from .src.sfx.FX import FX
 from .src.sfx.Implode import Implode
 from .src.sfx.Sepia import Sepia
+from .src.sfx.Sketch import Sketch
 
 NODE_CLASS_MAPPINGS = {
     "CropByAspectRatio": CropByAspectRatio,
@@ -17,6 +18,7 @@ NODE_CLASS_MAPPINGS = {
     "FX": FX,
     "Implode": Implode,
     "Sepia": Sepia,
+    "Sketch": Sketch,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -28,6 +30,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "FX": FX.TITLE,
     "Implode": Implode.TITLE,
     "Sepia": Sepia.TITLE,
+    "Sketch": Sketch.TITLE,
 }
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

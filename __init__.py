@@ -27,6 +27,8 @@ from .src.image_effects.Edge import Edge
 from .src.image_effects.Emboss import Emboss
 from .src.image_effects.Kuwahara import Kuwahara
 from .src.image_effects.Shade import Shade
+from .src.image_effects.Sharpen import Sharpen
+from .src.image_effects.AdaptiveSharpen import AdaptiveSharpen
 
 NODE_CLASS_MAPPINGS = {
     "CropByAspectRatio": CropByAspectRatio,
@@ -55,6 +57,8 @@ NODE_CLASS_MAPPINGS = {
     "Emboss": Emboss,
     "Kuwahara": Kuwahara,
     "Shade": Shade,
+    "Sharpen": Sharpen,
+    "AdaptiveSharpen": AdaptiveSharpen,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -84,6 +88,8 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "Emboss": Emboss.TITLE,
     "Kuwahara": Kuwahara.TITLE,
     "Shade": Shade.TITLE,
+    "Sharpen": Sharpen.TITLE,
+    "AdaptiveSharpen": AdaptiveSharpen.TITLE,
 }
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

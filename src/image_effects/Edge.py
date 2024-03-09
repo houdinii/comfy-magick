@@ -46,9 +46,9 @@ class Edge:
             blob.seek(0)
 
             with WandImage(blob=blob.getvalue()) as wand_img:
-                wand_img.transform_colorspace('gray')
+                wand_img.transform_colorspace("gray")
                 wand_img.edge(radius=Radius)
-                result_b = wand_to_pil(wand_img).convert(mode='RGB')
+                result_b = wand_to_pil(wand_img).convert(mode="RGB")
             result_b = torch.tensor(np.array(result_b)) / 255.0
 
             try:

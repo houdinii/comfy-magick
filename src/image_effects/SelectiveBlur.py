@@ -12,6 +12,7 @@ import numpy as np
 
 #  TODO What is this actually doing?
 
+
 class SelectiveBlur:
     @classmethod
     def INPUT_TYPES(s):
@@ -59,7 +60,10 @@ class SelectiveBlur:
 
             with WandImage(blob=blob.getvalue()) as wand_img:
                 wand_img.selective_blur(
-                    radius=Radius, sigma=Sigma, threshold=Threshold, channel=Color_Channel
+                    radius=Radius,
+                    sigma=Sigma,
+                    threshold=Threshold,
+                    channel=Color_Channel,
                 )
                 result_b = wand_to_pil(wand_img)
             result_b = torch.tensor(np.array(result_b)) / 255.0

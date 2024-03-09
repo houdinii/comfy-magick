@@ -28,7 +28,7 @@ class MotionBlur:
                 ),
                 "Angle": (
                     "FLOAT",
-                    {"min": 0.0, "max": 100.0, "default": 0.0, "step": 0.1},
+                    {"min": 0.0, "max": 360.0, "default": 0.0, "step": 0.1},
                 ),
             }
         }

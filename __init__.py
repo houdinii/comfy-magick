@@ -8,6 +8,7 @@ from .src.sfx.FX import FX
 from .src.sfx.Implode import Implode
 from .src.sfx.Sepia import Sepia
 from .src.sfx.Sketch import Sketch
+from .src.sfx.Stereogram import Stereogram
 
 NODE_CLASS_MAPPINGS = {
     "CropByAspectRatio": CropByAspectRatio,
@@ -19,6 +20,7 @@ NODE_CLASS_MAPPINGS = {
     "Implode": Implode,
     "Sepia": Sepia,
     "Sketch": Sketch,
+    "Stereogram": Stereogram,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -31,6 +33,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "Implode": Implode.TITLE,
     "Sepia": Sepia.TITLE,
     "Sketch": Sketch.TITLE,
+    "Stereogram": Stereogram.TITLE,
 }
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

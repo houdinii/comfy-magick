@@ -38,7 +38,7 @@ class MotionBlur:
     OUTPUT_NODE = True
     OUTPUT_IS_LIST = (False,)
 
-    CATEGORY = "ComfyMagick/Image Effects"
+    CATEGORY = "ComfyMagick/Image Effects/Blur"
     TITLE = "Motion Blur Image Effect"
 
     def processMotionBlur(self, IMAGE, Radius, Sigma, Angle, Color_Channel):

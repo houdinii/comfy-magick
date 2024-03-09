@@ -34,7 +34,7 @@ class GaussianBlur:
     OUTPUT_NODE = True
     OUTPUT_IS_LIST = (False,)
 
-    CATEGORY = "ComfyMagick/Image Effects"
+    CATEGORY = "ComfyMagick/Image Effects/Blur"
     TITLE = "Gaussian Blur Image Effect"
 
     def processGaussianBlur(self, IMAGE, Radius, Color_Channel, Sigma):

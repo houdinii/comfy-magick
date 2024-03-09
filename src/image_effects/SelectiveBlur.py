@@ -10,30 +10,40 @@ import io
 import numpy as np
 
 
-class RotationalBlur:
+#  TODO What is this actually doing?
+
+class SelectiveBlur:
     @classmethod
     def INPUT_TYPES(s):
         return {
             "required": {
                 "IMAGE": ("IMAGE",),
                 "Color_Channel": (COLOR_CHANNELS_LIST, {"default": "all_channels"}),
-                "Angle": (
+                "Radius": (
                     "FLOAT",
-                    {"min": 0.0, "max": 360.0, "default": 0.0, "step": 0.1},
+                    {"min": 0.0, "max": 100.0, "default": 0.0, "step": 0.1},
+                ),
+                "Sigma": (
+                    "FLOAT",
+                    {"min": 0.0, "max": 100.0, "default": 0.0, "step": 0.1},
+                ),
+                "Threshold": (
+                    "FLOAT",
+                    {"min": 0.0, "max": 1000.0, "default": 0.0, "step": 0.25},
                 ),
             }
         }
 
     INPUT_IS_LIST = False
     RETURN_TYPES = ("IMAGE",)
-    FUNCTION = "processRotationalBlur"
+    FUNCTION = "processSelectiveBlur"
     OUTPUT_NODE = True
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/Image Effects/Blur"
-    TITLE = "Rotational Blur Image Effect"
+    TITLE = "Selective Blur Image Effect"
 
-    def processRotationalBlur(self, IMAGE, Angle, Color_Channel):
+    def processSelectiveBlur(self, IMAGE, Radius, Sigma, Threshold, Color_Channel):
         batch, height, width, channels = IMAGE.shape
         result = getEmptyResults(
             batch=batch, height=height, width=width, color_channels=channels
@@ -48,7 +58,9 @@ class RotationalBlur:
             blob.seek(0)
 
             with WandImage(blob=blob.getvalue()) as wand_img:
-                wand_img.rotational_blur(angle=Angle, channel=Color_Channel)
+                wand_img.selective_blur(
+                    radius=Radius, sigma=Sigma, threshold=Threshold, channel=Color_Channel
+                )
                 result_b = wand_to_pil(wand_img)
             result_b = torch.tensor(np.array(result_b)) / 255.0
 

@@ -34,7 +34,7 @@ class Blur:
     OUTPUT_NODE = True
     OUTPUT_IS_LIST = (False,)
 
-    CATEGORY = "ComfyMagick/Image Effects"
+    CATEGORY = "ComfyMagick/Image Effects/Blur"
     TITLE = "Blur Image Effect"
 
     def processBlur(self, IMAGE, Radius, Color_Channel, Sigma):

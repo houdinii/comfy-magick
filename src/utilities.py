@@ -32,6 +32,24 @@ def getEmptyResults(batch, height, width, color_channels=3, dtype=torch.float32)
     return torch.zeros(batch, height, width, color_channels, dtype=dtype)
 
 
+def pure_pil_alpha_to_color_v2(image, color=(255, 255, 255)):
+    """Alpha composite an RGBA Image with a specified color.
+
+    Simpler, faster version than the solutions above.
+
+    Source: http://stackoverflow.com/a/9459208/284318
+
+    Keyword Arguments:
+    image -- PIL RGBA Image object
+    color -- Tuple r, g, b (default 255, 255, 255)
+
+    """
+    image.load()  # needed for split()
+    background = PILImage.new('RGB', image.size, color)
+    background.paste(image, mask=image.split()[3])  # 3 is the alpha channel
+    return background
+
+
 # These lists need to be trimmed and rearranged
 COLOR_CHANNELS_LIST = [
     "red",

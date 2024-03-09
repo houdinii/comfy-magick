@@ -15,6 +15,8 @@ from .src.sfx.Tint import Tint
 from .src.sfx.Vignette import Vignette
 from .src.sfx.WaveletDenoise import WaveletDenoise
 
+from .src.image_effects.Blur import Blur
+
 NODE_CLASS_MAPPINGS = {
     "CropByAspectRatio": CropByAspectRatio,
     "BlueShift": BlueShift,
@@ -31,6 +33,7 @@ NODE_CLASS_MAPPINGS = {
     "Tint": Tint,
     "Vignette": Vignette,
     "WaveletDenoise": WaveletDenoise,
+    "Blur": Blur,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -49,6 +52,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "Tint": Tint.TITLE,
     "Vignette": Vignette.TITLE,
     "WaveletDenoise": WaveletDenoise.TITLE,
+    "Blur": Blur.TITLE,
 }
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

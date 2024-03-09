@@ -4,6 +4,7 @@ from .src.sfx.Charcoal import Charcoal
 from .src.sfx.AddNoise import AddNoise
 from .src.sfx.Colorize import Colorize
 from .src.sfx.FX import FX
+from .src.sfx.Implode import Implode
 
 NODE_CLASS_MAPPINGS = {
     "CropByAspectRatio": CropByAspectRatio,
@@ -12,6 +13,7 @@ NODE_CLASS_MAPPINGS = {
     "AddNoise": AddNoise,
     "Colorize": Colorize,
     "FX": FX,
+    "Implode": Implode,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -21,6 +23,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "AddNoise": AddNoise.TITLE,
     "Colorize": Colorize.TITLE,
     "FX": FX.TITLE,
+    "Implode": Implode.TITLE,
 }
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

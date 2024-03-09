@@ -17,6 +17,8 @@ from .src.sfx.WaveletDenoise import WaveletDenoise
 
 from .src.image_effects.Blur import Blur
 from .src.image_effects.AdaptiveBlur import AdaptiveBlur
+from .src.image_effects.GaussianBlur import GaussianBlur
+from .src.image_effects.MotionBlur import MotionBlur
 
 NODE_CLASS_MAPPINGS = {
     "CropByAspectRatio": CropByAspectRatio,
@@ -36,6 +38,8 @@ NODE_CLASS_MAPPINGS = {
     "WaveletDenoise": WaveletDenoise,
     "Blur": Blur,
     "AdaptiveBlur": AdaptiveBlur,
+    "GaussianBlur": GaussianBlur,
+    "MotionBlur": MotionBlur,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -56,6 +60,8 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "WaveletDenoise": WaveletDenoise.TITLE,
     "Blur": Blur.TITLE,
     "AdaptiveBlur": AdaptiveBlur.TITLE,
+    "GaussianBlur": GaussianBlur.TITLE,
+    "MotionBlur": MotionBlur.TITLE,
 }
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

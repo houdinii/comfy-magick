@@ -11,6 +11,7 @@ from .src.sfx.Sketch import Sketch
 from .src.sfx.Stereogram import Stereogram
 from .src.sfx.Solarize import Solarize
 from .src.sfx.Swirl import Swirl
+from .src.sfx.Tint import Tint
 
 NODE_CLASS_MAPPINGS = {
     "CropByAspectRatio": CropByAspectRatio,
@@ -25,6 +26,7 @@ NODE_CLASS_MAPPINGS = {
     "Stereogram": Stereogram,
     "Solarize": Solarize,
     "Swirl": Swirl,
+    "Tint": Tint,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -40,6 +42,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "Stereogram": Stereogram.TITLE,
     "Solarize": Solarize.TITLE,
     "Swirl": Swirl.TITLE,
+    "Tint": Tint.TITLE,
 }
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

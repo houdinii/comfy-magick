@@ -30,6 +30,7 @@ from .src.image_effects.Shade import Shade
 from .src.image_effects.Sharpen import Sharpen
 from .src.image_effects.AdaptiveSharpen import AdaptiveSharpen
 from .src.image_effects.UnsharpMask import UnsharpMask
+from .src.image_effects.Spread import Spread
 
 NODE_CLASS_MAPPINGS = {
     "CropByAspectRatio": CropByAspectRatio,
@@ -61,6 +62,7 @@ NODE_CLASS_MAPPINGS = {
     "Sharpen": Sharpen,
     "AdaptiveSharpen": AdaptiveSharpen,
     "UnsharpMask": UnsharpMask,
+    "Spread": Spread,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -93,6 +95,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "Sharpen": Sharpen.TITLE,
     "AdaptiveSharpen": AdaptiveSharpen.TITLE,
     "UnsharpMask": UnsharpMask.TITLE,
+    "Spread": Spread.TITLE,
 }
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

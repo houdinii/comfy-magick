@@ -16,6 +16,7 @@ from .src.sfx.Vignette import Vignette
 from .src.sfx.WaveletDenoise import WaveletDenoise
 
 from .src.image_effects.Blur import Blur
+from .src.image_effects.AdaptiveBlur import AdaptiveBlur
 
 NODE_CLASS_MAPPINGS = {
     "CropByAspectRatio": CropByAspectRatio,
@@ -34,6 +35,7 @@ NODE_CLASS_MAPPINGS = {
     "Vignette": Vignette,
     "WaveletDenoise": WaveletDenoise,
     "Blur": Blur,
+    "AdaptiveBlur": AdaptiveBlur,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -53,6 +55,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "Vignette": Vignette.TITLE,
     "WaveletDenoise": WaveletDenoise.TITLE,
     "Blur": Blur.TITLE,
+    "AdaptiveBlur": AdaptiveBlur.TITLE,
 }
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

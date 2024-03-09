@@ -10,6 +10,7 @@ from .src.sfx.Sepia import Sepia
 from .src.sfx.Sketch import Sketch
 from .src.sfx.Stereogram import Stereogram
 from .src.sfx.Solarize import Solarize
+from .src.sfx.Swirl import Swirl
 
 NODE_CLASS_MAPPINGS = {
     "CropByAspectRatio": CropByAspectRatio,
@@ -23,6 +24,7 @@ NODE_CLASS_MAPPINGS = {
     "Sketch": Sketch,
     "Stereogram": Stereogram,
     "Solarize": Solarize,
+    "Swirl": Swirl,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -37,6 +39,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "Sketch": Sketch.TITLE,
     "Stereogram": Stereogram.TITLE,
     "Solarize": Solarize.TITLE,
+    "Swirl": Swirl.TITLE,
 }
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

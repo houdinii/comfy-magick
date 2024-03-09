@@ -1,5 +1,5 @@
 import torch
-from ..utilities import wand_to_pil, getEmptyResults
+from ..utilities import wand_to_pil, getEmptyResults, COLOR_CHANNELS_LIST
 from PIL import Image as PILImage
 from wand.image import Image as WandImage
 import io
@@ -14,25 +14,7 @@ class FX:
             "required": {
                 "IMAGE": ("IMAGE",),
                 "FX_Filter": ("STRING", {"default": '(hue > 0.9 || hue < 0.1) ? u : lightness'}),
-                "Color_Channel": (
-                    [
-                        "red",
-                        "gray",
-                        "cyan",
-                        "green",
-                        "magenta",
-                        "blue",
-                        "yellow",
-                        "alpha",
-                        "opacity",
-                        "black",
-                        "index",
-                        "composite_channels",
-                        "all_channels",
-                        "sync_channels",
-                        "default_channels",
-                    ], {"default": "all_channels"}
-                ),
+                "Color_Channel": (COLOR_CHANNELS_LIST, {"default": "all_channels"}),
             },
             "optional": {
                 "NOTES": ("STRING", {"default": "httpd://www.imagemagick.org/script/fx.php"})

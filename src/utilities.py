@@ -5,6 +5,33 @@ from PIL import Image as PILImage
 import io
 
 
+def process_comfy_magick_function(FUNCTION, IMAGE, *args, **kwargs):
+    print(f"Args: {args}")
+    print(f"Kwargs: {kwargs}")
+
+    batch, height, width, channels = IMAGE.shape
+    result = getEmptyResults(
+        batch=batch, height=height, width=width, color_channels=channels
+    )
+
+    for b in range(batch):
+        img_b = IMAGE[b] * 255.0
+        with WandImage.from_array(img_b.numpy().astype("uint8"), "RGB") as wand_img:
+
+            # wand_img.blue_shift(factor=Factor)
+            FUNCTION(wand_img, *args, **kwargs)
+
+            result_b = torch.tensor(np.array(wand_img)) / 255.0
+
+        try:
+            result[b] = result_b
+            print(f"result shape: {result.shape}")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+
+    return result
+
+
 def wand_to_pil(wand_img: WandImage):
     # It needs to go back to PIL now and then back to tensor
     img_buffer = np.asarray(bytearray(wand_img.make_blob(format="png")), dtype="uint8")

@@ -1,9 +1,5 @@
 import torch
-from ..utilities import (
-    wand_to_pil,
-    getEmptyResults,
-    COLOR_CHANNELS_LIST
-)
+from ..utilities import wand_to_pil, getEmptyResults, COLOR_CHANNELS_LIST
 from PIL import Image as PILImage
 from wand.image import Image as WandImage
 import io
@@ -32,7 +28,7 @@ class UnsharpMask:
                     "FLOAT",
                     {"min": 0.0, "max": 100.0, "default": 4.0, "step": 0.1},
                 ),
-                "Color_Channel": (COLOR_CHANNELS_LIST, {"default": "all_channels"})
+                "Color_Channel": (COLOR_CHANNELS_LIST, {"default": "all_channels"}),
             }
         }
 
@@ -45,7 +41,9 @@ class UnsharpMask:
     CATEGORY = "ComfyMagick/Image Effects"
     TITLE = "Unsharp Mask Image Effect"
 
-    def processUnsharpMask(self, IMAGE, Radius, Sigma, Amount, Threshold, Color_Channel):
+    def processUnsharpMask(
+        self, IMAGE, Radius, Sigma, Amount, Threshold, Color_Channel
+    ):
         batch, height, width, channels = IMAGE.shape
         result = getEmptyResults(
             batch=batch, height=height, width=width, color_channels=channels
@@ -60,7 +58,13 @@ class UnsharpMask:
             blob.seek(0)
 
             with WandImage(blob=blob.getvalue()) as wand_img:
-                wand_img.unsharp_mask(radius=Radius, sigma=Sigma, amount=Amount, threshold=Threshold, channel=Color_Channel)
+                wand_img.unsharp_mask(
+                    radius=Radius,
+                    sigma=Sigma,
+                    amount=Amount,
+                    threshold=Threshold,
+                    channel=Color_Channel,
+                )
                 result_b = wand_to_pil(wand_img)
             result_b = torch.tensor(np.array(result_b)) / 255.0
 

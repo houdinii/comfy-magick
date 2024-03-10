@@ -34,29 +34,7 @@ class TestNative:
     TITLE = "TestNative"
 
     def processTestNative(self, IMAGE, Factor):
-        result = process_comfy_magick_function(FUNCTION=WandImage.blue_shift, IMAGE=IMAGE)
+        result = process_comfy_magick_function(
+            FUNCTION=WandImage.blue_shift, IMAGE=IMAGE
+        )
         return (result,)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

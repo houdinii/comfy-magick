@@ -1,9 +1,5 @@
 import torch
-from ..utilities import (
-    wand_to_pil,
-    getEmptyResults,
-    PIXEL_INTERPOLATE_METHODS_LIST
-)
+from ..utilities import wand_to_pil, getEmptyResults, PIXEL_INTERPOLATE_METHODS_LIST
 from PIL import Image as PILImage
 from wand.image import Image as WandImage
 import io
@@ -20,7 +16,7 @@ class Spread:
                     "FLOAT",
                     {"min": 0.0, "max": 100.0, "default": 8.0, "step": 0.1},
                 ),
-                "Interpolate_Method": (PIXEL_INTERPOLATE_METHODS_LIST, )
+                "Interpolate_Method": (PIXEL_INTERPOLATE_METHODS_LIST,),
             }
         }
 

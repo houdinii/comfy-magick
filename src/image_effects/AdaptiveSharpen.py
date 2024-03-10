@@ -1,9 +1,5 @@
 import torch
-from ..utilities import (
-    wand_to_pil,
-    getEmptyResults,
-    COLOR_CHANNELS_LIST
-)
+from ..utilities import wand_to_pil, getEmptyResults, COLOR_CHANNELS_LIST
 from PIL import Image as PILImage
 from wand.image import Image as WandImage
 import io
@@ -24,7 +20,7 @@ class AdaptiveSharpen:
                     "FLOAT",
                     {"min": 0.0, "max": 100.0, "default": 4.0, "step": 0.1},
                 ),
-                "Color_Channel": (COLOR_CHANNELS_LIST, {"default": "all_channels"})
+                "Color_Channel": (COLOR_CHANNELS_LIST, {"default": "all_channels"}),
             }
         }
 
@@ -52,7 +48,9 @@ class AdaptiveSharpen:
             blob.seek(0)
 
             with WandImage(blob=blob.getvalue()) as wand_img:
-                wand_img.adaptive_sharpen(radius=Radius, sigma=Sigma, channel=Color_Channel)
+                wand_img.adaptive_sharpen(
+                    radius=Radius, sigma=Sigma, channel=Color_Channel
+                )
                 result_b = wand_to_pil(wand_img)
             result_b = torch.tensor(np.array(result_b)) / 255.0
 

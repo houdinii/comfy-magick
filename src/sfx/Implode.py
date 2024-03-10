@@ -23,7 +23,7 @@ class Implode:
     INPUT_IS_LIST = False
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "processImplode"
-    OUTPUT_NODE = True
+    OUTPUT_NODE = False
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"

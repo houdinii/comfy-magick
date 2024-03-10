@@ -26,7 +26,7 @@ class WaveletDenoise:
     INPUT_IS_LIST = False
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "processWaveletDenoise"
-    OUTPUT_NODE = True
+    OUTPUT_NODE = False
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"

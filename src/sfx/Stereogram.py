@@ -21,7 +21,7 @@ class Stereogram:
     INPUT_IS_LIST = False
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "processStereogram"
-    OUTPUT_NODE = True
+    OUTPUT_NODE = False
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"

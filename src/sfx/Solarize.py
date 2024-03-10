@@ -23,7 +23,7 @@ class Solarize:
     INPUT_IS_LIST = False
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "processSolarize"
-    OUTPUT_NODE = True
+    OUTPUT_NODE = False
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"

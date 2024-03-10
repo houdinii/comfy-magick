@@ -30,7 +30,7 @@ class FX:
     INPUT_IS_LIST = False
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "processFX"
-    OUTPUT_NODE = True
+    OUTPUT_NODE = False
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"

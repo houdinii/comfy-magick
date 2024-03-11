@@ -4,6 +4,19 @@ from ..utilities import process_comfy_magick_function
 
 
 class WaveletDenoise:
+    """
+    Removes noise by applying a wavelet transform.
+
+    Warning
+    This class method is only available with ImageMagick 7.0.8-41, or greater.
+
+    Parameters:
+    threshold (numbers.Real) – Smoothing limit.
+    softness (numbers.Real) – Attenuate of the smoothing threshold.
+
+    Raises:
+    WandLibraryVersionError – If system’s version of ImageMagick does not support this method.
+    """
     @classmethod
     def INPUT_TYPES(s):
         return {

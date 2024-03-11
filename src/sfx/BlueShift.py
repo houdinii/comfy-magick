@@ -4,6 +4,12 @@ from ..utilities import process_comfy_magick_function
 
 
 class BlueShift:
+    """
+    Mutes colors of the image by shifting blue values.
+
+    Parameters:
+    factor (numbers.Real) – Amount to adjust values.
+    """
     @classmethod
     def INPUT_TYPES(s):
         return {

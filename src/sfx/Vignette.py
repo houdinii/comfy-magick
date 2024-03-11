@@ -15,6 +15,15 @@ import numpy as np
 
 
 class Vignette:
+    """
+    Creates a soft vignette style effect on the image.
+
+    Parameters:
+    radius (numbers.Real) – the radius of the Gaussian blur effect.
+    sigma (numbers.Real) – the standard deviation of the Gaussian effect.
+    x (numbers.Integral) – Number of pixels to offset inward from the top & bottom of the image before drawing effect.
+    y (numbers.Integral) – Number of pixels to offset inward from the left & right of the image before drawing effect.
+    """
     @classmethod
     def INPUT_TYPES(s):
         return {

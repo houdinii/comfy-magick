@@ -4,6 +4,13 @@ from ..utilities import PIXEL_INTERPOLATE_METHODS_LIST, process_comfy_magick_fun
 
 
 class Swirl:
+    """
+    Swirls pixels around the center of the image. The larger the degree the more pixels will be effected.
+
+    Parameters:
+    degree (numbers.Real) – Defines the amount of pixels to be effected. Value between -360.0 and 360.0.
+    method (basestring) – Controls interpolation of the effected pixels. Only available for ImageMagick-7. See PIXEL_INTERPOLATE_METHODS.
+    """
     @classmethod
     def INPUT_TYPES(s):
         return {

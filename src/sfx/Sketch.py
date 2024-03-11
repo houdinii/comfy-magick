@@ -4,6 +4,14 @@ from ..utilities import process_comfy_magick_function
 
 
 class Sketch:
+    """
+    Simulates a pencil sketch effect. For best results, radius value should be larger than sigma.
+
+    Parameters:
+    radius (numbers.Real) – size of Gaussian aperture.
+    sigma (numbers.Real) – standard deviation of the Gaussian operator.
+    angle (numbers.Real) – direction of blur.
+    """
     @classmethod
     def INPUT_TYPES(s):
         return {

@@ -12,6 +12,14 @@ import numpy as np
 
 
 class Implode:
+    """
+    Creates a “imploding” effect by pulling pixels towards the center of the image.
+
+    Parameters:
+    amount (numbers.Real) – Normalized degree of effect between 0.0 & 1.0.
+    method (basestring) – Which interpolate method to apply to effected pixels. See PIXEL_INTERPOLATE_METHODS for
+    a list of options. Only available with ImageMagick-7.
+    """
     @classmethod
     def INPUT_TYPES(s):
         return {

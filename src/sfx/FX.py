@@ -3,8 +3,25 @@ from wand.image import Image as WandImage
 from ..utilities import COLOR_CHANNELS_LIST, process_comfy_magick_function
 
 
-# http://www.imagemagick.org/script/fx.php
 class FX:
+    """
+    Manipulate each pixel of an image by given expression.
+    FX will preserver current wand instance, and return a new instance of Image containing affected pixels.
+    Defaults entire image, but can isolate affects to single color channel by passing CHANNELS value to channel parameter.
+
+    See also
+    The anatomy of FX expressions can be found at http://www.imagemagick.org/script/fx.php
+
+    Parameters:
+    expression (basestring) – The entire FX expression to apply
+    channel (CHANNELS) – Optional channel to target.
+
+    Returns:
+    A new instance of an image with expression applied
+
+    Return type:
+    Image
+    """
     @classmethod
     def INPUT_TYPES(s):
         return {

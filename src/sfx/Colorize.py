@@ -4,6 +4,13 @@ from ..utilities import process_comfy_magick_function
 
 
 class Colorize:
+    """
+    Blends a given fill color over the image. The amount of blend is determined by the color channels given by the alpha argument.
+
+    Parameters:
+    color (wand.color.Color) – Color to paint image with.
+        alpha (wand.color.Color) – Defines how to blend color.
+    """
     @classmethod
     def INPUT_TYPES(s):
         return {

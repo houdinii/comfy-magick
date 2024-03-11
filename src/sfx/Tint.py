@@ -4,6 +4,13 @@ from ..utilities import process_comfy_magick_function
 
 
 class Tint:
+    """
+    Applies a color vector to each pixel in the image.
+
+    Parameters:
+    color (Color) – Color to calculate midtone.
+    alpha (Color) – Determine how to blend.
+    """
     @classmethod
     def INPUT_TYPES(s):
         return {

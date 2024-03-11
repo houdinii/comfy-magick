@@ -10,6 +10,13 @@ import numpy as np
 
 
 class Stereogram:
+    """
+    Create a new stereogram image from two existing images.
+
+    Parameters:
+    left (wand.image.Image) – Left-eye image.
+    right (wand.image.Image) – Right-eye image.
+    """
     @classmethod
     def INPUT_TYPES(s):
         return {

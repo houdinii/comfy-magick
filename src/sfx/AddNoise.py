@@ -8,6 +8,14 @@ from ..utilities import (
 
 
 class AddNoise:
+    """
+    Adds noise to image.
+
+    Parameters:
+    noise_type (basestring) – type of noise to apply. See NOISE_TYPES.
+    attenuate (numbers.Real) – rate of distribution. Only available in ImageMagick-7. Default is 1.0.
+    channel (basestring) – Optionally target a color channel to apply noise to. See CHANNELS.
+    """
     @classmethod
     def INPUT_TYPES(s):
         return {

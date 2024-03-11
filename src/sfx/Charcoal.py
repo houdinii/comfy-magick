@@ -7,6 +7,13 @@ import numpy as np
 
 
 class Charcoal:
+    """
+    Transform an image into a simulated charcoal drawing.
+
+    Parameters:
+    radius (numbers.Real) – The size of the Gaussian operator.
+    sigma (numbers.Real) – The standard deviation of the Gaussian.
+    """
     @classmethod
     def INPUT_TYPES(s):
         return {

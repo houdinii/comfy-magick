@@ -29,7 +29,10 @@ def process_comfy_magick_function(FUNCTION, IMAGE, *args, **kwargs):
             if gray:
                 wand_img.transform_colorspace("gray")
             # Call the function
-            FUNCTION(wand_img, *args, **kwargs)
+            func_result = FUNCTION(wand_img, *args, **kwargs)
+            # If the function returns an image, return that instead of the original wand image
+            if type(func_result) == type(wand_img):
+                wand_img = func_result
             # Convert back to rgb if gray is True since Comfy expects 3 channels
             if gray:
                 wand_img.transform_colorspace("rgb")

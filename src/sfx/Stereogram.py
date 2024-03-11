@@ -6,6 +6,7 @@ import io
 import numpy as np
 
 # TODO: MAKE THE PHOTO SHIFT AUTOMATIC WITHOUT NEEDING TWO INPUTS!
+# TODO: REWRITE SO IT WORKS WITH NATIVE
 
 
 class Stereogram:

@@ -1,14 +1,5 @@
-import torch
-from ..utilities import getEmptyResults, process_comfy_magick_function
+from ..utilities import process_comfy_magick_function
 from wand.image import Image as WandImage
-import numpy as np
-
-
-def test_function(image, factor):
-    print("\n\n")
-    print(f"Image (type): {type(image)}")
-    print(f"Factor: {factor}")
-    print("\n\n")
 
 
 class TestNative:

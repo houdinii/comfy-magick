@@ -219,7 +219,7 @@ Project Link: [https://github.com/houdinii/comfy-magick](https://github.com/houd
 ImageMagick is Apache 2.0 license
 https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwilo46Ll-OEAxX4ENAFHYeABc8QFnoECAcQAQ&url=https%3A%2F%2Fimagemagick.org%2Fscript%2Flicense.php&usg=AOvVaw0MLxNNicF-KnYPZozkNf2g&opi=89978449
 
-wand is license
+wand is license MIT 3.0, documentation included.
 custom license included
 
 some functionality for loading into PIL form is from another package, EllangoK/ComfyUI-post-processing-nodes

@@ -44,7 +44,7 @@ class UnsharpMask:
 
     def processUnsharpMask(self, IMAGE, Radius, Sigma, Amount, Threshold, Color_Channel, Grayscale):
         result = process_comfy_magick_function(
-            FUNCTION=WandImage.blur,
+            FUNCTION=WandImage.unsharp_mask,
             IMAGE=IMAGE,
             radius=Radius,
             sigma=Sigma,

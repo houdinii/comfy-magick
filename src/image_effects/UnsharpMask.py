@@ -1,5 +1,10 @@
 import torch
-from ..utilities import wand_to_pil, getEmptyResults, COLOR_CHANNELS_LIST, process_comfy_magick_function
+from ..utilities import (
+    wand_to_pil,
+    getEmptyResults,
+    COLOR_CHANNELS_LIST,
+    process_comfy_magick_function,
+)
 from PIL import Image as PILImage
 from wand.image import Image as WandImage
 import io
@@ -42,7 +47,9 @@ class UnsharpMask:
     CATEGORY = "ComfyMagick/Image Effects"
     TITLE = "Unsharp Mask Image Effect"
 
-    def processUnsharpMask(self, IMAGE, Radius, Sigma, Amount, Threshold, Color_Channel, Grayscale):
+    def processUnsharpMask(
+        self, IMAGE, Radius, Sigma, Amount, Threshold, Color_Channel, Grayscale
+    ):
         result = process_comfy_magick_function(
             FUNCTION=WandImage.unsharp_mask,
             IMAGE=IMAGE,

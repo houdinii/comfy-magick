@@ -1,12 +1,8 @@
-import torch
-from ..utilities import (
-    wand_to_pil,
-    getEmptyResults, process_comfy_magick_function,
-)
-from PIL import Image as PILImage
 from wand.image import Image as WandImage
-import io
-import numpy as np
+
+from ..utilities import (
+    process_comfy_magick_function,
+)
 
 
 class Shade:
@@ -45,4 +41,3 @@ class Shade:
             GRAY=Grayscale,
         )
         return (result,)
-

@@ -37,6 +37,6 @@ class GaussianBlur:
             GRAY=Grayscale,
             radius=Radius,
             sigma=Sigma,
-            channel=Color_Channel
+            channel=Color_Channel,
         )
         return (result,)

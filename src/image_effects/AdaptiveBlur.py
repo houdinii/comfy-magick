@@ -40,6 +40,6 @@ class AdaptiveBlur:
             sigma=Sigma,
             radius=Radius,
             channel=Color_Channel,
-            GRAY=Grayscale
+            GRAY=Grayscale,
         )
         return (result,)

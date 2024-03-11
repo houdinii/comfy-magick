@@ -30,5 +30,7 @@ class Emboss:
     TITLE = "Emboss Image Effect"
 
     def processEmboss(self, IMAGE, Radius, Sigma, Grayscale):
-        result = process_comfy_magick_function(FUNCTION=WandImage.emboss, IMAGE=IMAGE, GRAY=Grayscale)
+        result = process_comfy_magick_function(
+            FUNCTION=WandImage.emboss, IMAGE=IMAGE, GRAY=Grayscale
+        )
         return (result,)

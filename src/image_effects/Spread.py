@@ -1,9 +1,6 @@
-import torch
-from ..utilities import wand_to_pil, getEmptyResults, PIXEL_INTERPOLATE_METHODS_LIST, process_comfy_magick_function
-from PIL import Image as PILImage
 from wand.image import Image as WandImage
-import io
-import numpy as np
+
+from ..utilities import PIXEL_INTERPOLATE_METHODS_LIST, process_comfy_magick_function
 
 
 class Spread:

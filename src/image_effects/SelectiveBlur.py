@@ -38,7 +38,9 @@ class SelectiveBlur:
     CATEGORY = "ComfyMagick/Image Effects/Blur"
     TITLE = "Selective Blur Image Effect"
 
-    def processSelectiveBlur(self, IMAGE, Radius, Sigma, Threshold, Color_Channel, Grayscale):
+    def processSelectiveBlur(
+        self, IMAGE, Radius, Sigma, Threshold, Color_Channel, Grayscale
+    ):
         result = process_comfy_magick_function(
             FUNCTION=WandImage.selective_blur,
             IMAGE=IMAGE,

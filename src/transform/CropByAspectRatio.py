@@ -12,6 +12,8 @@ from wand.image import Image as WandImage
 import io
 import numpy as np
 
+# TODO: Implement native functions
+
 
 class CropByAspectRatio:
     @classmethod

@@ -1,9 +1,6 @@
-import torch
-from ..utilities import wand_to_pil, getEmptyResults
-from PIL import Image as PILImage
 from wand.image import Image as WandImage
-import io
-import numpy as np
+
+from ..utilities import process_comfy_magick_function
 
 
 class BlueShift:
@@ -16,6 +13,7 @@ class BlueShift:
                     "FLOAT",
                     {"min": 0.0, "max": 100.0, "default": 1.5, "step": 0.05},
                 ),
+                "Grayscale": (["True", "False"], {"default": "False"}),
             }
         }
 
@@ -28,30 +26,11 @@ class BlueShift:
     CATEGORY = "ComfyMagick/SFX"
     TITLE = "Blue Shift Effect"
 
-    def processBlueShift(self, IMAGE, Factor):
-        batch, height, width, channels = IMAGE.shape
-        result = getEmptyResults(
-            batch=batch, height=height, width=width, color_channels=channels
+    def processBlueShift(self, IMAGE, Factor, Grayscale):
+        result = process_comfy_magick_function(
+            FUNCTION=WandImage.blue_shift,
+            IMAGE=IMAGE,
+            factor=Factor,
+            GRAY=Grayscale,
         )
-
-        for b in range(batch):
-            result_b = None
-            img_b = IMAGE[b] * 255.0
-            img_b = PILImage.fromarray(img_b.numpy().astype("uint8"), "RGB")
-            blob = io.BytesIO()
-            img_b.save(blob, format="PNG")
-            blob.seek(0)
-
-            with WandImage(blob=blob.getvalue()) as wand_img:
-                wand_img.blue_shift(factor=Factor)
-
-                result_b = wand_to_pil(wand_img)
-            result_b = torch.tensor(np.array(result_b)) / 255.0
-
-            try:
-                result[b] = result_b
-                print(f"result shape: {result.shape}")
-            except Exception as e:
-                print(f"An error occurred in the {self.FUNCTION} node: {e}")
-
         return (result,)

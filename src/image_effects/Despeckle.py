@@ -10,6 +10,7 @@ class Despeckle:
         return {
             "required": {
                 "IMAGE": ("IMAGE",),
+                "Grayscale": (["True", "False"], {"default": "False"}),
             },
         }
 
@@ -22,8 +23,8 @@ class Despeckle:
     CATEGORY = "ComfyMagick/Image Effects"
     TITLE = "Despeckle Image Effect"
 
-    def processDespeckle(self, IMAGE):
+    def processDespeckle(self, IMAGE, Grayscale):
         result = process_comfy_magick_function(
-            FUNCTION=WandImage.despeckle, IMAGE=IMAGE
+            FUNCTION=WandImage.despeckle, IMAGE=IMAGE, GRAY=Grayscale
         )
         return (result,)

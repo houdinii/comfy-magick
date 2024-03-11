@@ -15,7 +15,8 @@ class Emboss:
                 "Sigma": (
                     "FLOAT",
                     {"min": 0.0, "max": 100.0, "default": 0.0, "step": 0.1},
-                )
+                ),
+                "Grayscale": (["True", "False"], {"default": "True"}),
             }
         }
 
@@ -28,8 +29,6 @@ class Emboss:
     CATEGORY = "ComfyMagick/Image Effects"
     TITLE = "Emboss Image Effect"
 
-    def processEmboss(self, IMAGE, GRAY, Radius, Sigma):
-        result = process_comfy_magick_function(
-            FUNCTION=WandImage.emboss, IMAGE=IMAGE
-        )
+    def processEmboss(self, IMAGE, Radius, Sigma, Grayscale):
+        result = process_comfy_magick_function(FUNCTION=WandImage.emboss, IMAGE=IMAGE, GRAY=Grayscale)
         return (result,)

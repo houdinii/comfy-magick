@@ -6,16 +6,37 @@ import io
 
 
 def process_comfy_magick_function(FUNCTION, IMAGE, *args, **kwargs):
+    # Set when GRAY is passed as an attribute. This part is starting to smell.
+    gray = False
+    GRAY_KWARG = "False"
+    # Set current image stats
     batch, height, width, channels = IMAGE.shape
+    # Create result image tensor
     result = getEmptyResults(
         batch=batch, height=height, width=width, color_channels=channels
     )
+    # Process each image in the batch
     for b in range(batch):
+        # Convert from tensor to wand image
         img_b = IMAGE[b] * 255.0
         with WandImage.from_array(img_b.numpy().astype("uint8"), "RGB") as wand_img:
+            # Get Gray kwarg and remove it from arguments
+            if 'GRAY' in kwargs:
+                GRAY_KWARG = kwargs.pop('GRAY')
+            if GRAY_KWARG == "True":
+                gray = True
+            # Convert to grayscale if gray is True
+            if gray:
+                wand_img.transform_colorspace('gray')
+            # Call the function
             FUNCTION(wand_img, *args, **kwargs)
+            # Convert back to rgb if gray is True since Comfy expects 3 channels
+            if gray:
+                wand_img.transform_colorspace('rgb')
+            # Convert image back into tensor
             result_b = torch.tensor(np.array(wand_img)) / 255.0
         try:
+            # Replace empty tensor with image from batch and move on to the next one
             result[b] = result_b
         except Exception as e:
             print(f"An error occurred: {e}")

@@ -1,5 +1,6 @@
 from ..utilities import (
-    COLOR_CHANNELS_LIST, process_comfy_magick_function,
+    COLOR_CHANNELS_LIST,
+    process_comfy_magick_function,
 )
 from wand.image import Image as WandImage
 
@@ -19,6 +20,7 @@ class Blur:
                     "FLOAT",
                     {"min": 0.0, "max": 100.0, "default": 0.0, "step": 0.1},
                 ),
+                "Grayscale": (["True", "False"], {"default": "False"}),
             },
         }
 
@@ -31,12 +33,13 @@ class Blur:
     CATEGORY = "ComfyMagick/Image Effects/Blur"
     TITLE = "Blur Image Effect"
 
-    def processBlur(self, IMAGE, Radius, Color_Channel, Sigma):
+    def processBlur(self, IMAGE, Radius, Color_Channel, Sigma, Grayscale):
         result = process_comfy_magick_function(
             FUNCTION=WandImage.blur,
             IMAGE=IMAGE,
             radius=Radius,
             sigma=Sigma,
-            channel=Color_Channel
+            channel=Color_Channel,
+            GRAY=Grayscale,
         )
         return (result,)

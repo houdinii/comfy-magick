@@ -18,6 +18,7 @@ class AdaptiveSharpen:
                     {"min": 0.0, "max": 100.0, "default": 4.0, "step": 0.1},
                 ),
                 "Color_Channel": (COLOR_CHANNELS_LIST, {"default": "all_channels"}),
+                "Grayscale": (["True", "False"], {"default": "False"}),
             },
         }
 
@@ -30,12 +31,13 @@ class AdaptiveSharpen:
     CATEGORY = "ComfyMagick/Image Effects"
     TITLE = "Adaptive Sharpen Image Effect"
 
-    def processAdaptiveSharpen(self, IMAGE, Radius, Sigma, Color_Channel):
+    def processAdaptiveSharpen(self, IMAGE, Radius, Sigma, Color_Channel, Grayscale):
         result = process_comfy_magick_function(
             FUNCTION=WandImage.adaptive_sharpen,
             IMAGE=IMAGE,
             radius=Radius,
             sigma=Sigma,
             channel=Color_Channel,
+            GRAY=Grayscale,
         )
         return (result,)

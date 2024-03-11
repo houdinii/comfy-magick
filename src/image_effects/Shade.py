@@ -1,7 +1,7 @@
 import torch
 from ..utilities import (
     wand_to_pil,
-    getEmptyResults,
+    getEmptyResults, process_comfy_magick_function,
 )
 from PIL import Image as PILImage
 from wand.image import Image as WandImage
@@ -23,7 +23,7 @@ class Shade:
                     "FLOAT",
                     {"min": 0.0, "max": 100.0, "default": 1.5, "step": 0.1},
                 ),
-                "Gray": (["True", "False"],),
+                "Grayscale": (["True", "False"], {"default": "True"}),
             }
         }
 
@@ -36,33 +36,13 @@ class Shade:
     CATEGORY = "ComfyMagick/Image Effects"
     TITLE = "Shade Image Effect"
 
-    def processShade(self, IMAGE, Azimuth, Elevation, Gray):
-        batch, height, width, channels = IMAGE.shape
-        result = getEmptyResults(
-            batch=batch, height=height, width=width, color_channels=channels
+    def processShade(self, IMAGE, Azimuth, Elevation, Grayscale):
+        result = process_comfy_magick_function(
+            FUNCTION=WandImage.shade,
+            IMAGE=IMAGE,
+            azimuth=Azimuth,
+            elevation=Elevation,
+            GRAY=Grayscale,
         )
-
-        for b in range(batch):
-            result_b = None
-            img_b = IMAGE[b] * 255.0
-            img_b = PILImage.fromarray(img_b.numpy().astype("uint8"), "RGB")
-            blob = io.BytesIO()
-            img_b.save(blob, format="PNG")
-            blob.seek(0)
-
-            with WandImage(blob=blob.getvalue()) as wand_img:
-                if Gray == "True":
-                    gray_bool = True
-                else:
-                    gray_bool = False
-                wand_img.shade(azimuth=Azimuth, elevation=Elevation, gray=gray_bool)
-                result_b = wand_to_pil(wand_img).convert(mode="RGB")
-            result_b = torch.tensor(np.array(result_b)) / 255.0
-
-            try:
-                result[b] = result_b
-                print(f"result shape: {result.shape}")
-            except Exception as e:
-                print(f"An error occurred in the {self.FUNCTION} node: {e}")
-
         return (result,)
+

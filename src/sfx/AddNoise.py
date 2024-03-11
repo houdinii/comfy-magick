@@ -2,7 +2,8 @@ from wand.image import Image as WandImage
 
 from ..utilities import (
     COLOR_CHANNELS_LIST,
-    NOISE_TYPE_LIST, process_comfy_magick_function,
+    NOISE_TYPE_LIST,
+    process_comfy_magick_function,
 )
 
 

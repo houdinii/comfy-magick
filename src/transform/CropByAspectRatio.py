@@ -33,7 +33,7 @@ class CropByAspectRatio:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick"
-    TITLE = "Crop By Aspect Ratio"
+    TITLE = "ComfyMagick - Crop By Aspect Ratio"
 
     def processCropByAspectRatio(self, IMAGE, aspect_ratio, gravity):
         batch, height, width, channels = IMAGE.shape

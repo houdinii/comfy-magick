@@ -33,7 +33,7 @@ class Stereogram:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"
-    TITLE = "Stereogram Effect"
+    TITLE = "ComfyMagick - Stereogram Effect"
 
     def processStereogram(self, LEFT_EYE_IMAGE, RIGHT_EYE_IMAGE):
         batch, height, width, channels = LEFT_EYE_IMAGE.shape

@@ -30,7 +30,7 @@ class Sepia:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"
-    TITLE = "Sepia Effect"
+    TITLE = "ComfyMagick - Sepia Effect"
 
     def processSepia(self, IMAGE, Threshold, Grayscale):
         result = process_comfy_magick_function(

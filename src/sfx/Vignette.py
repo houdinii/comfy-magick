@@ -67,7 +67,7 @@ class Vignette:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"
-    TITLE = "Vignette Effect"
+    TITLE = "ComfyMagick - Vignette Effect"
 
     def processVignette(self, IMAGE, Radius, Sigma, X, Y, Red, Green, Blue):
         batch, height, width, channels = IMAGE.shape

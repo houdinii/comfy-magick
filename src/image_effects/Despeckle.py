@@ -21,7 +21,7 @@ class Despeckle:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/Image Effects"
-    TITLE = "Despeckle Image Effect"
+    TITLE = "ComfyMagick - Despeckle Image Effect"
 
     def processDespeckle(self, IMAGE, Grayscale):
         result = process_comfy_magick_function(

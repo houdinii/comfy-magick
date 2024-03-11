@@ -27,7 +27,7 @@ class Kuwahara:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/Image Effects"
-    TITLE = "Kuwahara Image Effect"
+    TITLE = "ComfyMagick - Kuwahara Image Effect"
 
     def processKuwahara(self, IMAGE, Radius, Sigma, Grayscale):
         result = process_comfy_magick_function(

@@ -32,7 +32,7 @@ class Solarize:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"
-    TITLE = "Solarize Effect"
+    TITLE = "ComfyMagick - Solarize Effect"
 
     def processSolarize(self, IMAGE, Threshold, Color_Channel, Grayscale):
         result = process_comfy_magick_function(

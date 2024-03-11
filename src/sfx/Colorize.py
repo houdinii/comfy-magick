@@ -29,7 +29,7 @@ class Colorize:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"
-    TITLE = "Colorize Effect"
+    TITLE = "ComfyMagick - Colorize Effect"
 
     def processColorize(self, IMAGE, Color, Alpha, Grayscale):
         result = process_comfy_magick_function(

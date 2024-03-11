@@ -30,7 +30,7 @@ class Sharpen:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/Image Effects"
-    TITLE = "Sharpen Image Effect"
+    TITLE = "ComfyMagick - Sharpen Image Effect"
 
     def processSharpen(self, IMAGE, Radius, Sigma, Grayscale):
         result = process_comfy_magick_function(

@@ -41,7 +41,7 @@ class Implode:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"
-    TITLE = "Implode Effect"
+    TITLE = "ComfyMagick - Implode Effect"
 
     def processImplode(self, IMAGE, Amount, Pixel_Interpolate_Method, Grayscale):
         result = process_comfy_magick_function(

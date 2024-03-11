@@ -27,7 +27,7 @@ class Emboss:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/Image Effects"
-    TITLE = "Emboss Image Effect"
+    TITLE = "ComfyMagick - Emboss Image Effect"
 
     def processEmboss(self, IMAGE, Radius, Sigma, Grayscale):
         result = process_comfy_magick_function(

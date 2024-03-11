@@ -36,7 +36,7 @@ class SelectiveBlur:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/Image Effects/Blur"
-    TITLE = "Selective Blur Image Effect"
+    TITLE = "ComfyMagick - Selective Blur Image Effect"
 
     def processSelectiveBlur(
         self, IMAGE, Radius, Sigma, Threshold, Color_Channel, Grayscale

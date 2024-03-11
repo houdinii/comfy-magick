@@ -32,7 +32,7 @@ class MotionBlur:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/Image Effects/Blur"
-    TITLE = "Motion Blur Image Effect"
+    TITLE = "ComfyMagick - Motion Blur Image Effect"
 
     def processMotionBlur(self, IMAGE, Radius, Sigma, Angle, Color_Channel, Grayscale):
         result = process_comfy_magick_function(

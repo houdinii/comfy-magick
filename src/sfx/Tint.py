@@ -29,7 +29,7 @@ class Tint:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"
-    TITLE = "Tint Effect"
+    TITLE = "ComfyMagick - Tint Effect"
 
     def processTint(self, IMAGE, Color, Alpha, Grayscale):
         result = process_comfy_magick_function(

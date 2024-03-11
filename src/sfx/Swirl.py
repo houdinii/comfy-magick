@@ -32,7 +32,7 @@ class Swirl:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"
-    TITLE = "Swirl Effect"
+    TITLE = "ComfyMagick - Swirl Effect"
 
     def processSwirl(self, IMAGE, Degree, Pixel_Interpolate_Method, Grayscale):
         result = process_comfy_magick_function(

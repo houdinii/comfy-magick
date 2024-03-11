@@ -49,7 +49,7 @@ class FX:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"
-    TITLE = "FX Effect"
+    TITLE = "ComfyMagick - FX Effect"
 
     def processFX(self, IMAGE, FX_Filter, Color_Channel, NOTES, Grayscale):
         result = process_comfy_magick_function(

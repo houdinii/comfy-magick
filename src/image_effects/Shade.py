@@ -30,7 +30,7 @@ class Shade:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/Image Effects"
-    TITLE = "Shade Image Effect"
+    TITLE = "ComfyMagick - Shade Image Effect"
 
     def processShade(self, IMAGE, Azimuth, Elevation, Grayscale):
         result = process_comfy_magick_function(

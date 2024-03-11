@@ -23,7 +23,7 @@ class Edge:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/Image Effects"
-    TITLE = "Edge Image Effect"
+    TITLE = "ComfyMagick - Edge Image Effect"
 
     def processEdge(self, IMAGE, Radius, Grayscale):
         result = process_comfy_magick_function(

@@ -24,7 +24,7 @@ class RotationalBlur:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/Image Effects/Blur"
-    TITLE = "Rotational Blur Image Effect"
+    TITLE = "ComfyMagick - Rotational Blur Image Effect"
 
     def processRotationalBlur(self, IMAGE, Angle, Color_Channel, Grayscale):
         result = process_comfy_magick_function(

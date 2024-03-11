@@ -37,7 +37,7 @@ class Charcoal:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"
-    TITLE = "Charcoal Effect"
+    TITLE = "ComfyMagick - Charcoal Effect"
 
     def processCharcoal(self, IMAGE, Radius, Sigma):
         # It's auto grayscale

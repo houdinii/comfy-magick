@@ -30,7 +30,7 @@ class BlueShift:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"
-    TITLE = "Blue Shift Effect"
+    TITLE = "ComfyMagick - Blue Shift Effect"
 
     def processBlueShift(self, IMAGE, Factor, Grayscale):
         result = process_comfy_magick_function(

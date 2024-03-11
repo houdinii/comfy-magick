@@ -41,7 +41,7 @@ class WaveletDenoise:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"
-    TITLE = "WaveletDenoise Effect"
+    TITLE = "ComfyMagick - WaveletDenoise Effect"
 
     def processWaveletDenoise(self, IMAGE, Threshold, Softness, Grayscale):
         result = process_comfy_magick_function(

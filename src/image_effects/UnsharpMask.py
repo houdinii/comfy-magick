@@ -45,7 +45,7 @@ class UnsharpMask:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/Image Effects"
-    TITLE = "Unsharp Mask Image Effect"
+    TITLE = "ComfyMagick - Unsharp Mask Image Effect"
 
     def processUnsharpMask(
         self, IMAGE, Radius, Sigma, Amount, Threshold, Color_Channel, Grayscale

@@ -40,7 +40,7 @@ class Sketch:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/SFX"
-    TITLE = "Sketch Effect"
+    TITLE = "ComfyMagick - Sketch Effect"
 
     def processSketch(self, IMAGE, Radius, Sigma, Angle, Grayscale):
         result = process_comfy_magick_function(

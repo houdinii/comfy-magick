@@ -25,7 +25,7 @@ class Spread:
     OUTPUT_IS_LIST = (False,)
 
     CATEGORY = "ComfyMagick/Image Effects"
-    TITLE = "Spread Image Effect"
+    TITLE = "ComfyMagick - Spread Image Effect"
 
     def processSpread(self, IMAGE, Radius, Interpolate_Method, Grayscale):
         result = process_comfy_magick_function(

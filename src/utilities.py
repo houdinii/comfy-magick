@@ -77,7 +77,7 @@ def pure_pil_alpha_to_color_v2(image, color=(255, 255, 255)):
 
     Simpler, faster version than the solutions above.
 
-    Source: http://stackoverflow.com/a/9459208/284318
+    Source: https://stackoverflow.com/a/9459208/284318
 
     Keyword Arguments:
     image -- PIL RGBA Image object

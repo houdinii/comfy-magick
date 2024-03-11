@@ -11,6 +11,7 @@ class Swirl:
     degree (numbers.Real) – Defines the amount of pixels to be effected. Value between -360.0 and 360.0.
     method (basestring) – Controls interpolation of the effected pixels. Only available for ImageMagick-7. See PIXEL_INTERPOLATE_METHODS.
     """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

@@ -17,6 +17,7 @@ class WaveletDenoise:
     Raises:
     WandLibraryVersionError – If system’s version of ImageMagick does not support this method.
     """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

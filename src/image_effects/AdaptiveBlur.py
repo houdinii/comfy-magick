@@ -6,6 +6,15 @@ from wand.image import Image as WandImage
 
 
 class AdaptiveBlur:
+    """
+    Adaptively blurs the image by decreasing Gaussian as the operator approaches detected edges.
+
+    Parameters:
+    radius (numbers.Real) – size of gaussian aperture.
+    sigma (numbers.Real) – Standard deviation of the gaussian filter.
+    channel (basestring) – Apply the blur effect on a specific channel. See CHANNELS.
+    """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

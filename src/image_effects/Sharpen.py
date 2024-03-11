@@ -4,8 +4,23 @@ from ..utilities import (
     process_comfy_magick_function,
 )
 
+# TODO "Defaults values of zero will have ImageMagick attempt to auto-select suitable values."
+
 
 class Sharpen:
+    """
+    Applies a gaussian effect to enhance the sharpness of an image.
+
+    Note
+    For best results, ensure radius is larger than sigma.
+    Defaults values of zero will have ImageMagick attempt to auto-select suitable values.
+
+    Parameters:
+    radius (numbers.Real) – size of gaussian aperture.
+    sigma (numbers.Real) – Standard deviation of the gaussian filter.
+    channel (basestring) – Optional color channel to target. See CHANNELS.
+    """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

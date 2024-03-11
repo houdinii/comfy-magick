@@ -11,6 +11,7 @@ class Tint:
     color (Color) – Color to calculate midtone.
     alpha (Color) – Determine how to blend.
     """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

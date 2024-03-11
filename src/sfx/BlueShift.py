@@ -10,6 +10,7 @@ class BlueShift:
     Parameters:
     factor (numbers.Real) – Amount to adjust values.
     """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

@@ -6,6 +6,17 @@ from wand.image import Image as WandImage
 
 
 class Blur:
+    """
+    Blurs the image. Convolve the image with a gaussian operator of the given radius and standard deviation (sigma).
+    For reasonable results, the radius should be larger than sigma. Use a radius of 0 and blur() selects a suitable
+    radius for you.
+
+    Parameters:
+    radius (numbers.Real) – the radius of the blur, in pixels, not counting the center pixel. Default is 0.0.
+    sigma (numbers.Real) – the standard deviation of the blur, in pixels. Default value is 0.0.
+    channel (basestring) – Optional color channel to apply blur. See CHANNELS.
+    """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

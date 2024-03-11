@@ -4,6 +4,15 @@ from ..utilities import PIXEL_INTERPOLATE_METHODS_LIST, process_comfy_magick_fun
 
 
 class Spread:
+    """
+    Randomly displace pixels within a defined radius.
+
+    Parameters:
+    radius (numbers.Real) – Distance a pixel can be displaced from source. Default value is 0.0, which will allow
+        ImageMagick to auto select a radius.
+    method – Interpolation method. Only available with ImageMagick-7. See PIXEL_INTERPOLATE_METHODS.
+    """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

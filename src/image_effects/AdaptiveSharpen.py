@@ -1,9 +1,17 @@
-import torch
 from ..utilities import COLOR_CHANNELS_LIST, process_comfy_magick_function
 from wand.image import Image as WandImage
 
 
 class AdaptiveSharpen:
+    """
+    Adaptively sharpens the image by sharpening more intensely near image edges and less intensely far from edges.
+
+    Parameters:
+    radius (numbers.Real) – size of gaussian aperture.
+    sigma (numbers.Real) – Standard deviation of the gaussian filter.
+    channel (basestring) – Apply the sharpen effect on a specific channel. See CHANNELS.
+    """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

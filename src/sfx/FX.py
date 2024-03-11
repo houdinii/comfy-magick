@@ -10,7 +10,7 @@ class FX:
     Defaults entire image, but can isolate affects to single color channel by passing CHANNELS value to channel parameter.
 
     See also
-    The anatomy of FX expressions can be found at http://www.imagemagick.org/script/fx.php
+    The anatomy of FX expressions can be found at https://www.imagemagick.org/script/fx.php
 
     Parameters:
     expression (basestring) – The entire FX expression to apply
@@ -22,6 +22,7 @@ class FX:
     Return type:
     Image
     """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

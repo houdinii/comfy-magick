@@ -6,6 +6,15 @@ from ..utilities import (
 
 
 class Shade:
+    """
+    Creates a 3D effect by simulating a light from an elevated angle.
+
+    Parameters:
+    gray (bool) – Isolate the effect on pixel intensity. Default is False.
+    azimuth (numbers.Real) – Angle from x-axis.
+    elevation (numbers.Real) – Amount of pixels from the z-axis.
+    """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

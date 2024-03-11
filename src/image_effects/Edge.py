@@ -3,6 +3,13 @@ from wand.image import Image as WandImage
 
 
 class Edge:
+    """
+    Applies convolution filter to detect edges.
+
+    Parameters:
+    radius (numbers.Real) – aperture of detection filter.
+    """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

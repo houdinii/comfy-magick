@@ -1,9 +1,6 @@
-import torch
-from ..utilities import wand_to_pil, getEmptyResults, process_comfy_magick_function
-from PIL import Image as PILImage
 from wand.image import Image as WandImage
-import io
-import numpy as np
+
+from ..utilities import process_comfy_magick_function
 
 
 class Charcoal:
@@ -14,6 +11,7 @@ class Charcoal:
     radius (numbers.Real) – The size of the Gaussian operator.
     sigma (numbers.Real) – The standard deviation of the Gaussian.
     """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

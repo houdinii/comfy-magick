@@ -24,6 +24,7 @@ class Vignette:
     x (numbers.Integral) – Number of pixels to offset inward from the top & bottom of the image before drawing effect.
     y (numbers.Integral) – Number of pixels to offset inward from the left & right of the image before drawing effect.
     """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

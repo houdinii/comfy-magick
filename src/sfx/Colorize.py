@@ -11,6 +11,7 @@ class Colorize:
     color (wand.color.Color) – Color to paint image with.
         alpha (wand.color.Color) – Defines how to blend color.
     """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

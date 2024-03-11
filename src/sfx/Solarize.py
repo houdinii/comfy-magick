@@ -11,6 +11,7 @@ class Solarize:
     threshold (numbers.Real) – between 0.0 and quantum_range.
     channel (basestring) – Optional color channel to target. See CHANNELS
     """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

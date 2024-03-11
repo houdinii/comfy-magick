@@ -12,6 +12,7 @@ class Sketch:
     sigma (numbers.Real) – standard deviation of the Gaussian operator.
     angle (numbers.Real) – direction of blur.
     """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

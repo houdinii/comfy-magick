@@ -5,6 +5,14 @@ from wand.image import Image as WandImage
 
 
 class Despeckle:
+    """
+    Applies filter to reduce noise in image.
+
+    dirty = None (bool) Whether the image is changed or not. (NOT USED AT THIS TIME)
+    property dispose  (basestring) Controls how the image data is handled during animations. Values are from
+        DISPOSE_TYPES list, and can also be set. (NOT USED AT THIS TIME)
+    """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

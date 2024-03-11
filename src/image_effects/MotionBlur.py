@@ -3,6 +3,15 @@ from wand.image import Image as WandImage
 
 
 class MotionBlur:
+    """
+    Apply a Gaussian blur along an angle direction. This simulates motion movement.
+
+    Parameters:
+    radius (numbers.Real) – Aperture size of the Gaussian operator.
+    sigma (numbers.Real) – Standard deviation of the Gaussian operator.
+    angle (numbers.Real) – Apply the effect along this angle.
+    """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

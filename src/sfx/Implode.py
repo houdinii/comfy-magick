@@ -1,14 +1,9 @@
-import torch
+from wand.image import Image as WandImage
+
 from ..utilities import (
-    wand_to_pil,
-    getEmptyResults,
     PIXEL_INTERPOLATE_METHODS_LIST,
     process_comfy_magick_function,
 )
-from PIL import Image as PILImage
-from wand.image import Image as WandImage
-import io
-import numpy as np
 
 
 class Implode:
@@ -20,6 +15,7 @@ class Implode:
     method (basestring) – Which interpolate method to apply to effected pixels. See PIXEL_INTERPOLATE_METHODS for
     a list of options. Only available with ImageMagick-7.
     """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

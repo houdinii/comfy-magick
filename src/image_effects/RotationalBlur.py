@@ -3,6 +3,20 @@ from wand.image import Image as WandImage
 
 
 class RotationalBlur:
+    """
+    Blur an image in a radius around the center of an image.
+
+    Warning
+    Requires ImageMagick-6.8.8 or greater.
+
+    Parameters:
+    angle (numbers.Real) – Degrees of rotation to blur with.
+    channel (basestring) – Optional channel to apply the effect against. See CHANNELS for a list of possible values.
+
+    Raises:
+    WandLibraryVersionError – If system’s version of ImageMagick does not support this method.
+    """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

@@ -10,6 +10,7 @@ class Sepia:
     Parameters:
     threshold (numbers.Real) – The extent of the toning. Value can be between 0 & quantum_range, or 0 & 1.0. Default value is 0.8 or “80%”.
     """
+
     @classmethod
     def INPUT_TYPES(s):
         return {

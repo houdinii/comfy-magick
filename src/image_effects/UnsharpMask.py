@@ -1,17 +1,27 @@
-import torch
+from wand.image import Image as WandImage
+
 from ..utilities import (
-    wand_to_pil,
-    getEmptyResults,
     COLOR_CHANNELS_LIST,
     process_comfy_magick_function,
 )
-from PIL import Image as PILImage
-from wand.image import Image as WandImage
-import io
-import numpy as np
 
 
 class UnsharpMask:
+    """
+    Sharpens the image using unsharp mask filter. We convolve the image with a Gaussian operator of the given radius
+    and standard deviation (sigma). For reasonable results, radius should be larger than sigma. Use a radius of 0 and
+    unsharp_mask() selects a suitable radius for you.
+
+
+    Parameters:
+    radius (numbers.Real) – the radius of the Gaussian, in pixels, not counting the center pixel
+    sigma (numbers.Real) – the standard deviation of the Gaussian, in pixels
+    amount (numbers.Real) – the percentage of the difference between the original and the blur image that is added back
+        into the original
+    threshold (numbers.Real) – the threshold in pixels needed to apply the difference amount.
+    channel (basestring) – Optional color channel to target. See CHANNELS
+    """
+
     @classmethod
     def INPUT_TYPES(s):
         return {
